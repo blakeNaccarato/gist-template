@@ -1,0 +1,10 @@
+py -3.11 -m 'venv' --clear '.venv'
+.venv/scripts/activate
+pip install --requirement 'requirements.txt'
+# ? https://serverfault.com/a/1006031/1070398
+$tmp = New-TemporaryFile | Rename-Item -NewName { $_ -replace 'tmp$', 'zip' } -PassThru
+$url = 'https://github.com/blakeNaccarato/advent23/archive/refs/heads/main.zip'
+Invoke-WebRequest $url -OutFile $tmp
+$tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
+$tmp | Expand-Archive -DestinationPath $tmpdir
+Get-ChildItem $tmpdir/*/* | Move-Item -Force
