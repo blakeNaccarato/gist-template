@@ -4,7 +4,7 @@ $url = 'https://github.com/blakeNaccarato/gist-template/archive/refs/heads/main.
 Invoke-WebRequest $url -OutFile $tmp
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 $tmp | Expand-Archive -DestinationPath $tmpdir
-Get-ChildItem $tmpdir/*/* | Move-Item -Recurse -Force
+Get-ChildItem $tmpdir/*/* | Move-Item -Force
 Remove-Item 'LICENSE'
 py -3.11 -m 'venv' --clear '.venv'
 .venv/scripts/activate
