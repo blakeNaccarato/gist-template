@@ -5,7 +5,8 @@ Invoke-WebRequest $url -OutFile $tmp
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 $tmp | Expand-Archive -DestinationPath $tmpdir
 Get-ChildItem $tmpdir/*/* | Move-Item -Force
-
+Remove-Item 'LICENSE'
 py -3.11 -m 'venv' --clear '.venv'
 .venv/scripts/activate
+New-Item -ErrorAction SilentlyContinue 'requirements.txt'
 pip install --requirement 'requirements.txt'
