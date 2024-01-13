@@ -4,13 +4,10 @@
     "bierner.markdown-preview-github-styles",
     "charliermarsh.ruff",
     "davidanson.vscode-markdownlint",
-    "esbenp.prettier-vscode",
     "ms-python.debugpy",
     "ms-python.python",
     "ms-toolsai.jupyter",
-    "redhat.vscode-yaml",
     "stkb.rewrap",
-    "tamasfe.even-better-toml",
     "yzhang.markdown-all-in-one"
   ]
 }
