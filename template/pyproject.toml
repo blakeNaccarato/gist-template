@@ -1,5 +1,6 @@
 [tool.pyright]
-useLibraryCodeForTypes = true
+exclude = ["**/node_modules", "**/__pycache__", "**/.*", "submodules"]
+stubPath = "submodules/typings"
 typeCheckingMode = "strict"
 # Default "true" in strict
 analyzeUnannotatedFunctions = true
@@ -12,19 +13,18 @@ strictSetInference = true
 # Default "false" in strict
 deprecateTypingAliases = false
 enableExperimentalFeatures = false
-# Default "error" in strict
+# Default "warning" in strict
 reportMissingModuleSource = "warning"
+# Default "error" in strict
 reportMissingImports = "warning"
 reportUndefinedVariable = "warning"
 reportAssertAlwaysTrue = "warning"
 reportInvalidStringEscapeSequence = "warning"
 reportInvalidTypeVarUse = "warning"
-# Default "warning" in strict
-reportMissingTypeStubs = "none"
-# Default "error" in strict
+reportMissingTypeStubs = "none"                # Overeager
 reportSelfClsParameterName = "warning"
 reportUnsupportedDunderAll = "warning"
-reportUnusedExpression = "none"
+reportUnusedExpression = "none"                # Handled by Ruff
 reportWildcardImportFromLibrary = "warning"
 reportGeneralTypeIssues = "warning"
 reportOptionalSubscript = "warning"
@@ -36,7 +36,7 @@ reportOptionalOperand = "warning"
 reportTypedDictNotRequiredAccess = "warning"
 reportPrivateImportUsage = "warning"
 reportUnboundVariable = "warning"
-reportUnusedCoroutine = "none"
+reportUnusedCoroutine = "none"                 # Handled by Ruff
 reportFunctionMemberAccess = "warning"
 reportIncompatibleMethodOverride = "warning"
 reportIncompatibleVariableOverride = "warning"
@@ -50,7 +50,7 @@ reportInvalidStubStatement = "warning"
 reportMatchNotExhaustive = "warning"
 reportMissingParameterType = "none"
 reportMissingTypeArgument = "warning"
-reportPrivateUsage = "warning"
+reportPrivateUsage = "none"                    # Ruff checks this well enough
 reportTypeCommentUsage = "warning"
 reportUnknownArgumentType = "none"
 reportUnknownLambdaType = "none"
@@ -61,44 +61,39 @@ reportUnnecessaryCast = "warning"
 reportUnnecessaryComparison = "warning"
 reportUnnecessaryContains = "warning"
 reportUnnecessaryIsInstance = "warning"
-reportUnusedClass = "none"
-reportUnusedImport = "none"
-reportUnusedFunction = "none"
-reportUnusedVariable = "none"
+reportUnusedClass = "none"                     # Handled by Ruff
+reportUnusedImport = "none"                    # Handled by Ruff
+reportUnusedFunction = "none"                  # Handled by Ruff
+reportUnusedVariable = "none"                  # Handled by Ruff
 reportUntypedBaseClass = "none"
 reportUntypedClassDecorator = "warning"
-reportUntypedFunctionDecorator = "warning"
+reportUntypedFunctionDecorator = "none"        # Often out of our control
 reportUntypedNamedTuple = "warning"
-# Defualt "none" in strict
+# Default "none" in strict
 reportCallInDefaultInitializer = "none"
 reportImplicitOverride = "none"
 reportImplicitStringConcatenation = "none"
 reportImportCycles = "none"
 reportMissingSuperCall = "none"
 reportPropertyTypeMismatch = "none"
-reportShadowedImports = "warning"
-reportUninitializedInstanceVariable = "warning"
+reportShadowedImports = "none"
+reportUninitializedInstanceVariable = "warning" # Ensure we define instance vars
 reportUnnecessaryTypeIgnoreComment = "none"
 reportUnusedCallResult = "none"
 
 [tool.ruff]
+cache-dir = ".cache/.ruff_cache"
+extend-exclude = ["submodules"]
+extend-include = ["*.ipynb"]
 fix = true
 force-exclude = true
 show-fixes = true
 show-source = true
 preview = false
 unsafe-fixes = false
-cache-dir = ".cache/.ruff_cache"
 fixable = ["ALL"]
-extend-include = ["*.ipynb"]
 select = ["ALL"]
-src = ["."]
-target-version = "py311"
-extend-unfixable = [
-    "F841", # Unused variables
-]
 extend-ignore = [
-    "A003",    # Allow 'id' shadowing
     "ANN",     # Don't require type annotations
     "ARG005",  # Allow unused lambda argument. For consistency across df pipelines.
     "C408",    # Allow dict calls
@@ -137,11 +132,7 @@ extend-ignore = [
 ]
 
 [tool.ruff.format]
-preview = true
 skip-magic-trailing-comma = true
-
-[tool.ruff.isort]
-split-on-trailing-comma = false
 
 [tool.ruff.pydocstyle]
 convention = "google"
@@ -156,6 +147,3 @@ convention = "google"
 
 [tool.ruff.flake8-bugbear]
 extend-immutable-calls = ["typer.Argument", "typer.Option"]
-
-[tool.ruff.pep8-naming]
-classmethod-decorators = ["pydantic.validator"]
