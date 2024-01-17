@@ -2,8 +2,6 @@
 
 Placeholder description.
 
-<!--! Modify the section below, clarifying specific usage -->
-
 ## Usage
 
 Download this Gist, install the `$PYTHON_VERSION` seen in `setup.ps1`, and run `setup.ps1` if you have [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell) installed, or equivalently in a terminal of your choice:
