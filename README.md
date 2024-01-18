@@ -6,7 +6,7 @@ If you're new to Python or VSCode, this template represents sensible configurati
 
 ## Usage
 
-To [generate a Gist from this template](#generate-a-gist-from-this-template), run [`setup.ps1`](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [next steps and template features](#next-steps-and-template-features) for more detail on what this template offers.
+To [⬇ generate a Gist from this template](#generate-a-gist-from-this-template), run [(⬇`setup.ps1`)](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [⬇ next steps and template features](#next-steps-and-template-features) for more detail on what this template offers.
 
 This template currently assumes Python 3.11, but you may fork it, change `target-version = "py311"` in `pyproject.toml` accordingly, and update the `clone` target in [(⬇`setup.ps1`)](#setupps1).
 
