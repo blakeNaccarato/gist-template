@@ -14,7 +14,7 @@ This template currently assumes Python 3.11, but you may fork it, change `target
 
 These steps detail the usage of this template starting from scratch on a brand new machine, including the installation of Python and other tools.
 
-- Install Python 3.11, VSCode, cross-platform PowerShell, and Git [(⬇details)](#first-time-setup)accordingly in `pyproject.toml`.
+- Install Python 3.11, VSCode, cross-platform PowerShell, and Git [(⬇details)](#first-time-setup)
 - Create a GitHub account and set the same username/email in your `~/.gitconfig` [(⬇details)](#create-a-github-account-and-configure-git)
 - Create a [blank Gist](https://gist.github.com/), populate with [⬇`setup.ps1`](#setupps1), and clone/open in VSCode [(⬇details)](#create-clone-and-open-your-gist-in-vscode)
 - Run `setup.ps1` locally [(⬇details)](#run-setupps1)
