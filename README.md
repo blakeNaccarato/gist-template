@@ -4,7 +4,7 @@ This is a Gist template designed for rapid development of Python utilities in VS
 
 ## Usage
 
-To use this template, run [`Initialize-Gist.ps1`](#initialize-gistps1) in a local clone of a newly-created Gist, then commit and push the changes ([⬇ details](#generate-a-gist-from-this-template)). The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike.
+To use this template, run [⬇ `Initialize-Gist.ps1`](#initialize-gistps1) in a local clone of a newly-created Gist, then commit and push the changes ([⬇ details](#generate-a-gist-from-this-template)). The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike.
 
 ## Generate a Gist from this template
 
@@ -12,7 +12,7 @@ These steps detail the usage of this template starting from scratch on a brand n
 
 - Ensure that Python, VSCode, PowerShell, and Git are installed. [⬇ details](#first-time-setup)
 - Create a new Gist, clone it, and open in VSCode. [⬇ details](#create-a-gist-from-this-template)
-- Open a new terminal window in VSCode (`` Ctrl+` ``), and copy/paste/run [`Initialize-Gist.ps1`](#initialize-gistps1) at the root of the cloned Gist directory.
+- Open a new terminal window in VSCode (`` Ctrl+` ``), and copy/paste/run [⬇ `Initialize-Gist.ps1`](#initialize-gistps1) at the root of the cloned Gist directory.
 - If prompted, respond `Yes` to the prompt to select the virtual environment for the workspace folder. You can fix this later on if you miss your chance here.
 - Restart VSCode and follow the notification/prompt to install the recommended extensions. If you miss this prompt, you can go to the Extensions tab, search for `@recommended`, and install Workspace Recommendations with the cloud icon.
 - Add the year and your name to the `LICENSE`, e.g. `Copyright (c) 2023 Blake Naccarato`. This tells others how they can use your code.
@@ -95,7 +95,7 @@ These details further expand on the steps for [generating a Gist from this templ
 
 ### First-time setup
 
-If on Windows, you may simply run [`Initialize-WindowsDev.ps1`](#initialize-windowsdevps1), which will also install Windows Terminal. Otherwise, follow the steps below.
+If on Windows, you may simply run [⬇ `Initialize-WindowsDev.ps1`](#initialize-windowsdevps1), which will also install Windows Terminal. Otherwise, follow the steps below.
 
 - Review relevant sections of [this setup guide](https://blakenaccarato.github.io/copier-python/#one-time-setup) to install Python, VSCode, Python, the cross-platform PowerShell, and Git.
 - Install the UNIX-like/MacOS [Python Launcher](https://python-launcher.app/) so the `py` command in `setup.ps1` will work for you.
