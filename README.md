@@ -44,6 +44,7 @@ Now you can start writing your Python code, updating requirements, and using the
 - [⬇ Automate tedium every time you save the file](#automate-tedium-every-time-you-save-the-file)
 - [⬇ Reduce friction and typos with refactoring](#reduce-friction-and-typos-with-refactoring)
 - [⬇ Keep track of expected data types](#keep-track-of-expected-data-types)
+- [⬇ Check and format Markdown documentation](#check-and-format-markdown-documentation)
 
 ### Control the displayed Gist name
 
@@ -116,6 +117,12 @@ Python won't *guarantee* that `an_argument` is an `int`, but Pylance will warn u
 We can even "reveal" the expected types of things by holding down the `Ctrl+Alt` keys. We can see a ghostly `: float` appear next to the `result` variable in the `main()` function body. This tells us that Pylance has inferred `result` to be a floating point number.
 
 You can interact with Pylance underlines much in the same way as you do with Ruff, the lightbulb will let you view and suppress warnings.
+
+[⬆ back](#using-template-features)
+
+### Check and format Markdown documentation
+
+This template configures the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and [Markdown All-in-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extensions to help you in writing [Markdown](https://www.markdownguide.org/) documentation. It's a simple text format that automatically renders to HTML in Gists and elsewhere. Click the preview icon in the tab bar when modifying a Markdown document to get a live preview, formatted to look like GitHub Markdown by [this extension](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles).
 
 [⬆ back](#using-template-features)
 
