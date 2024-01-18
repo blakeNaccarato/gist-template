@@ -96,7 +96,7 @@ $template = "$tmpdir/$templateDir"
 Get-ChildItem -File "$template/*" | Move-Item -Force
 if (! (Test-Path '.vscode')) {New-Item -ItemType Directory '.vscode'}
 Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
-py -m 'venv' '.venv'
+if (! (Test-Path '.venv')) {py -m 'venv' '.venv'}
 $activate_win = '.venv/scripts/activate'
 if (Test-Path $activate_win) { . $activate_win } else { . '.venv/bin/activate' }
 pip install --requirement 'requirements.txt'
