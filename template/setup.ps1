@@ -3,7 +3,6 @@
 Copy the template and install requirements in a Python virtual environment.
 #>
 
-Param([Parameter(Mandatory)]$PythonVersion)
 $tmp = New-TemporaryFile
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tmpdir

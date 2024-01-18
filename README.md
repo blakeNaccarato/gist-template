@@ -87,7 +87,6 @@ git clone 'https://gist.github.com/<...gist...>.git' 'C:/Users/<...you...>/Deskt
 This script copies the template and sets up a Python virtual environment.
 
 ```PowerShell
-Param([Parameter(Mandatory)]$PythonVersion)
 $tmp = New-TemporaryFile
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tmpdir
