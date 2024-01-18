@@ -1,4 +1,4 @@
 """Importable helper functions for `example.py`."""
 
-def something():
+def do_something_else():
     ...
