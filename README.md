@@ -6,9 +6,9 @@ If you're new to Python or VSCode, this template represents sensible configurati
 
 ## Usage
 
-To [⬇ generate a Gist from this template](#generate-a-gist-from-this-template), run [(⬇`setup.ps1`)](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [⬇ next steps and template features](#next-steps-and-template-features) for more detail on what this template offers.
+To [⬇ generate a Gist from this template](#generate-a-gist-from-this-template), run [⬇`setup.ps1`](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [⬇ next steps and template features](#next-steps-and-template-features) for more detail on what this template offers.
 
-This template currently assumes Python 3.11, but you may fork it, change `target-version = "py311"` in `pyproject.toml` accordingly, and update the `clone` target in [(⬇`setup.ps1`)](#setupps1).
+This template currently assumes Python 3.11, but you may fork it, change `target-version = "py311"` in `pyproject.toml` accordingly, and update the `clone` target in [⬇`setup.ps1`](#setupps1).
 
 ## Generate a Gist from this template
 
@@ -129,7 +129,7 @@ Some basics need installing on a new computer, or if you're new to Python coding
 
 #### On Windows
 
-If on Windows, run [(⬇ `Initialize-WindowsDev.ps1`)](#initialize-windowsdevps1) in a local Windows PowerShell terminal (right-click and select `Run as administrator`) which will install Windows Terminal as well. You may want to copy/paste this script into the terminal window to run it. Before running any code in this fashion, be sure you understand what it's doing. In this case, the script just runs a series of `winget` commands, which installs the software we need for developing Python code with this template.
+If on Windows, run [⬇`Initialize-WindowsDev.ps1`](#initialize-windowsdevps1) in a local Windows PowerShell terminal (right-click and select `Run as administrator`) which will install Windows Terminal as well. You may want to copy/paste this script into the terminal window to run it. Before running any code in this fashion, be sure you understand what it's doing. In this case, the script just runs a series of `winget` commands, which installs the software we need for developing Python code with this template.
 
 Once Windows Terminal (`wt`) is installed, open it from the start menu, click the drop-down arrow, then `Settings`. Here, select `PowerShell` (*not* `Windows PowerShell`) as your default profile, and also consider setting your "default terminal application" to Windows Terminal.
 
@@ -173,7 +173,7 @@ These steps outline the process for creating a Gist from this template, cloning 
 - Log in to your GitHub account at <https://gist.github.com>. You will be presented with a blank Gist.
 - Type a brief description that will display alongside your Gist. You can always edit it later.
 - Enter `setup.ps1` into the `Filename including extension...` field
-- Paste the contents of [(⬇ `setup.ps1`)](#setupps1) into the blank file field
+- Paste the contents of [⬇`setup.ps1`](#setupps1) into the blank file field
 - Click `Create public gist` (or secret, if desired).
 
 #### Clone and open your Gist in VSCode
