@@ -133,13 +133,13 @@ If on Windows, run [(⬇ `Initialize-WindowsDev.ps1`)](#initialize-windowsdevps1
 
 Once Windows Terminal (`wt`) is installed, open it from the start menu, click the drop-down arrow, then `Settings`. Here, select `PowerShell` (*not* `Windows PowerShell`) as your default profile, and also consider setting your "default terminal application" to Windows Terminal.
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 #### On other operating systems
 
 If you're on another operating system, review relevant sections of [this setup guide](https://blakenaccarato.github.io/copier-python/#one-time-setup) to install Python, VSCode, Python, cross-platform PowerShell, and Git. Also install the UNIX-like/MacOS-compatible [Python Launcher](https://python-launcher.app/), which unifies the `py` command functionality across operating systems.
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 ### Create a GitHub account and configure git
 
@@ -152,7 +152,7 @@ git config --global user.email 'yourGitHubAssociatedEmail@email.com'
 
 - If done correctly, VSCode will prompt you to log in to your GitHub account before pushing changes (a later step in the overall process above).
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 ### Set your Python interpreter
 
@@ -162,7 +162,7 @@ If you missed your chance on initial setup, you can still set the Python interpr
 - Check for `venv` in the bottom-right corner of VSCode, e.g. `3.11.6 64-bit (.venv: venv)`
 - If you don't see `venv`, click the version number to select the option with `.venv` in it
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 ### Create, clone, and open your Gist in VSCode
 
@@ -186,7 +186,7 @@ git clone '<URL you copied>' '<destination>'
 
 Click `Open` when prompted to open your newly-created Gist in VSCode, or navigate to it in your file explorer and open it in VSCode.
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 ### Run `setup.ps1`
 
@@ -197,7 +197,7 @@ Run `setup.ps1` in a [cross-platform PowerShell](https://learn.microsoft.com/en-
 - Installs requirements with `pip install -r requirements.txt`.
 - Installs some template-specific VSCode tooling
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 ## Scripts
 
@@ -235,7 +235,7 @@ else { . '.venv/bin/activate' }
 pip install --requirement 'requirements.txt'
 ```
 
-[(⬆ back)](#generate-a-gist-from-this-template)
+[⬆ back](#generate-a-gist-from-this-template)
 
 ### `Initialize-WindowsDev.ps1`
 
@@ -243,7 +243,7 @@ This script uses the [Windows Package Manager](https://apps.microsoft.com/store/
 
 You may want to copy/paste this script into the terminal window to run it. Before running any code in this fashion, be sure you understand what it's doing. In this case, the script just runs a series of `winget` commands, which installs the software we need for developing Python code with this template.
 
-[(⬆ back)](#first-time-setup)
+[⬆ back](#first-time-setup)
 
 ```PowerShell
 <#.SYNOPSIS
@@ -299,4 +299,4 @@ EnableFSMonitor=Enabled
 winget install --id 'Git.Git' --override "/SILENT /LOADINF=$inf"
 ```
 
-[(⬆ back)](#first-time-setup)
+[⬆ back](#first-time-setup)
