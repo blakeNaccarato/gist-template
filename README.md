@@ -83,7 +83,9 @@ We can even "reveal" the expected types of things by pressing `Ctrl+Alt`. We can
 
 You can interact with Pylance squigglies much in the same way as you do with Ruff, the lightbulb will let you suppress warnings (it adds `# type: ignore` to the end of the line in question).
 
-### Going beyond the Gist
+### Customizing further and going beyond the Gist template
+
+The `.gitignored` files in `.vscode`, `.markdownlint-cli2.yaml`, and `pyproject.toml` configure all of these tools. If you want to customize the warnings you see and the behaviors of these tools, look into their documentation and adjust accordingly. This template seeks to configure them sensibly, and intentionally avoids committing the tooling specifics to the Gist to avoid clutter. Also, Gists *cannot* hold any folders, only files.
 
 If your Gist becomes more complex, consider migrating to a full-featured GitHub repository. Check out my [copier-python repository template](https://github.com/blakeNaccarato/copier-python), which is a lot like this Gist template, but facilitates organizing your code into a package releasable on PyPI, and has documentation, testing, and even more dev tooling.
 
