@@ -1,12 +1,12 @@
 # gist-template
 
-A Gist template designed for rapid Python development in VSCode. It occupies the middle ground between one-off scripts and full-featured repositories. It includes refactoring tools, optional type checking, linting, and code formatting. You might ask, why use these tools in the first place? See [below](#usage-and-template-features) for detail on template features, example usage, and some reasons why you might want to use these features in your development workflow.
+A Gist template designed for rapid Python development in VSCode. It occupies the middle ground between one-off scripts and full-featured repositories. It includes refactoring tools, optional type checking, linting, and code formatting. You might ask, why use these tools in the first place? See [⬇ using template features](#using-template-features) for more detail, example usage, and some reasons why you might want to use these features in your development workflow.
 
 If you're new to Python or VSCode, this template represents sensible configuration of a VSCode development environment for Python with dependency management, debugging, code checking, code formatting, refactoring, and type checking. Most tooling is configured in `pyproject.toml`, with Pylance modified to be relatively strict, but use warnings to reduce visual overwhelm, and Ruff made similarly strict, but with certain rules suppressed.
 
 ## Usage
 
-To [⬇ generate a Gist from this template](#generate-a-gist-from-this-template), run [⬇`setup.ps1`](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [⬇ usage and template features](#usage-and-template-features) for more detail on what this template offers.
+To [⬇ generate a Gist from this template](#generate-a-gist-from-this-template), run [⬇`setup.ps1`](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [⬇ using template features](#using-template-features) for more detail on what this template offers.
 
 This template currently assumes Python 3.11, but you may fork it, change `target-version = "py311"` in `pyproject.toml` accordingly, and update the `clone` target in [⬇`setup.ps1`](#setupps1).
 
@@ -23,7 +23,7 @@ These steps detail the usage of this template starting from scratch on a brand n
 - Add the year and your name to the `LICENSE`, e.g. `Copyright (c) 2023 Blake Naccarato`. This signals to others the conditions for using your code.
 - Commit and push changes to your Gist. See [this segment](https://www.youtube.com/watch?v=i_23KUAEtUM&t=76s) for doing this in VSCode ([brief outline](https://code.visualstudio.com/docs/introvideos/versioncontrol#_video-outline), [more detail](https://code.visualstudio.com/docs/sourcecontrol/overview)).
 
-Now you should be able to modify and run Python scripts in this Gist. Try adding some Python code to the `main()` function of `example.py`. Run your script from the terminal like e.g. `python example.py`, or by clicking the "play button" icon in the VSCode tab ribbon while `example.py` is open. See [⬇ usage and template features](#usage-and-template-features) with examples involving the code in `example.py`.
+Now you should be able to modify and run Python scripts in this Gist. Try adding some Python code to the `main()` function of `example.py`. Run your script from the terminal like e.g. `python example.py`, or by clicking the "play button" icon in the VSCode tab ribbon while `example.py` is open. See [⬇ using template features](#using-template-features) with examples involving the code in `example.py`.
 
 ## Customizing further and going beyond the Gist template
 
@@ -31,7 +31,7 @@ The `.gitignored` `.vscode` folder, `.markdownlint-cli2.yaml`, and `pyproject.to
 
 If your Gist becomes more complex, consider migrating to a full-featured GitHub repository. Check out my [copier-python repository template](https://github.com/blakeNaccarato/copier-python), which is a lot like this Gist template, but facilitates organizing your code into a package releasable on PyPI, and has documentation, testing, and even more dev tooling.
 
-## Usage and template features
+## Using template features
 
 Now you can start writing your Python code, updating requirements, and using the tooling provided by this template. Here is an example using code in `example.py` and `other.py` that exhibits some of the features:
 
@@ -49,13 +49,13 @@ Now you can start writing your Python code, updating requirements, and using the
 
 Rename `$gist-template.md` and modify it to reflect the purpose of your Gist. It is `$`-prefixed and named so it sorts to the top of the Gist, and the Gist inherits its name. After pushing the Gist to the web and checking it online, you'll see how this Markdown file becomes the name of the Gist.
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ### Communicate your dependencies
 
 Include dependencies for running script(s) in `requirements.txt` (e.g. `pandas == 2.1.4` if using Pandas). Consider [pinning your requirements](https://pip.pypa.io/en/stable/topics/repeatable-installs/). You can run `pip freeze -r requirements.txt` and copy any package versions directly used by your scripts to `requirements.txt`. This signals the exact versions of dependencies these scripts last worked on. Consider also specifying the Python version you're using (Python 3.11, 3.12, etc.) in the Markdown document of your Gist. Remember to re-run `setup.ps1` (or `pip install -r requirements.txt`) whenever you modify `requirements.txt`!
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ### Debug your code
 
@@ -67,7 +67,7 @@ You may notice in `example.py`, Ruff underlines `print` statements and emits a m
 
 In this case, our `print` statements are stand-ins for the purposes of a tutorial. We can press `Ctrl+.` (or click the floating lightbulb) and suppress the warning in this case. Don't feel obligated to correct every single "violation" like this. Consider it an opportunity for gradual learning.
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ### Surface important details to improve readability
 
@@ -79,7 +79,7 @@ Defining all-caps constants above `main()` (e.g. `SOME_CONSTANT`) shows others t
 
 As `main()` gets even more complex, you may want to migrate some code out of it. If you want to move code over to `other.py`, note that you can import from it, e.g. `from other import something` in `example.py`.
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ### Automate tedium every time you save the file
 
@@ -89,7 +89,7 @@ Whenever you save a Python file, Ruff will automatically format it, check for st
 
 With auto-formatting, you'll find yourself writing longer bits of code that may run long, but a quick `Ctrl+S` will format it neatly. Still, try to avoid packing *too much* code into one statement.
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ### Reduce friction and typos with refactoring
 
@@ -105,7 +105,7 @@ Here are the most important refactoring tools available to you:
 - **Extract code into its own function:** Sometimes you have lots of related logic in line with the `main()` function. Try highlighting the three lines of code ending with `but_all_this_stuff_is_related` (press `Ctrl+L` repeatedly to select entire lines at a time), click the lightbulb, then click `Extract method...` and name it `do_related_things`.
 - **Extract constants:** You may find yourself hard-coding a "magic number", e.g. `65535`. It may have some special meaning to you, but the intent is not clear to others. Try renaming `65535`. Highlight it, click the lightbulb, click `Extract variable...`, and name it `MAX_16_BIT_INTEGER`. You may now move this to the top of the file (you'll have to manually cut/paste from here).
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ### Keep track of expected data types
 
@@ -117,7 +117,7 @@ We can even "reveal" the expected types of things by holding down the `Ctrl+Alt`
 
 You can interact with Pylance underlines much in the same way as you do with Ruff, the lightbulb will let you view and suppress warnings.
 
-[⬆ back](#usage-and-template-features)
+[⬆ back](#using-template-features)
 
 ## In-depth setup guide
 
