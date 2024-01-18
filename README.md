@@ -16,7 +16,7 @@ These steps detail the usage of this template starting from scratch on a brand n
 
 - Install Python 3.11, VSCode, cross-platform PowerShell, and Git [(⬇details)](#first-time-setup)accordingly in `pyproject.toml`.
 - Create a GitHub account and set the same username/email in your `~/.gitconfig` [(⬇details)](#create-a-github-account-and-configure-git)
-- Create a [blank Gist](https://gist.github.com/), populate with [(⬇`setup.ps1`)](#setupps1), and clone/open in VSCode [(⬇details)](#create-clone-and-open-your-gist-in-vscode)
+- Create a [blank Gist](https://gist.github.com/), populate with [⬇`setup.ps1`](#setupps1), and clone/open in VSCode [(⬇details)](#create-clone-and-open-your-gist-in-vscode)
 - Run `setup.ps1` locally [(⬇details)](#run-setupps1)
 - If prompted, respond `Yes` to the prompt to select the virtual environment for the workspace folder. You can fix this later on if you miss your chance here [(⬇details)](#set-your-python-interpreter).
 - Restart VSCode and click `Yes` when prompted to install recommended extensions from the bottom-right notification bell menu. Otherwise, navigate to the Extensions tab, search for `@recommended`, and click the cloud icon next to `Workspace Recommendations` to install.
