@@ -4,7 +4,7 @@ This is a Gist template designed for rapid development of Python utilities in VS
 
 ## Usage
 
-To use this template, run [`setup.ps1`](#setupps1) in a local clone of a newly-created Gist ([⬇ details](#details)). The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike.
+To use this template, run [`Initialize-Gist.ps1`](#initialize-gistps1) in a local clone of a newly-created Gist ([⬇ details](#details)). The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike.
 
 ## Details
 
@@ -12,12 +12,12 @@ These steps detail the usage of this template starting from scratch on a brand n
 
 - Ensure that Python, VSCode, PowerShell, and Git are installed. [⬇ details](#first-time-setup)
 - Create a new Gist, clone it, and open in VSCode. [⬇ details](#create-a-gist-from-this-template)
-- Open a new terminal window in VSCode (`` Ctrl+` ``), and copy/paste/run [`setup.ps1`](template/setup.ps1) at the root of the cloned Gist directory.
+- Open a new terminal window in VSCode (`` Ctrl+` ``), and copy/paste/run [`Initialize-Gist.ps1`](#initialize-gistps1) at the root of the cloned Gist directory.
 - If prompted, respond `Yes` to the prompt to select the virtual environment for the workspace folder. If you miss it, later you can click on e.g. `3.11.6 64-bit` and select the `.venv` interpreter option (in the bottom-right corner of when a Python file is open).
 - Restart VSCode and follow the notification/prompt to install the recommended extensions.
 - Update `.gitignore` as needed and modify the `LICENSE`.
 - Place any Python package requirements in `requirements.txt`, e.g `pandas==2.1.4`, and consider [pinning your requirements](https://pip.pypa.io/en/stable/topics/repeatable-installs/).
-- Re-run [`setup.ps1`](#setupps1) (or `pip install -r requirements.txt`) whenever you modify `requirements.txt`. [⬇ details](#set-up-a-virtual-environment-and-local-vscode-tooling)
+- Re-run [`setup.ps1`](#initialize-gistps1) (or `pip install -r requirements.txt`) whenever you modify `requirements.txt`. [⬇ details](#set-up-a-virtual-environment-and-local-vscode-tooling)
 - Rename `$gist-template.md` and modify it to reflect the purpose of your Gist. It is `$`-prefixed and named so it sorts to the top of the Gist, and the Gist inherits its name.
 
 If your Gist becomes more complex, consider migrating to a full-featured GitHub repository. Check out my [copier-python repository template](https://github.com/blakeNaccarato/copier-python), which is a lot like this Gist template, but facilitates organizing your code into a package releasable on PyPI, and has documentation, testing, and even more dev tooling.
@@ -82,15 +82,17 @@ git clone 'https://gist.github.com/<...gist...>.git' 'C:/Users/<...you...>/Deskt
 
 ## Scripts
 
-### `setup.ps1`
+### `Initialize-Gist.ps1`
 
 This script copies the template and sets up a Python virtual environment.
 
 ```PowerShell
+$templateDir = 'template-first-time'
+
 $tmp = New-TemporaryFile
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tmpdir
-$template = "$tmpdir/template"
+$template = "$tmpdir/$templateDir"
 Get-ChildItem -File "$template/*" | Move-Item -Force
 if (! (Test-Path '.vscode')) {New-Item -ItemType Directory '.vscode'}
 Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
