@@ -82,6 +82,7 @@ reportUnnecessaryTypeIgnoreComment = "none"
 reportUnusedCallResult = "none"
 
 [tool.ruff]
+target-version = "py311"
 cache-dir = ".cache/.ruff_cache"
 extend-exclude = ["submodules"]
 extend-include = ["*.ipynb"]
