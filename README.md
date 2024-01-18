@@ -87,12 +87,12 @@ git clone 'https://gist.github.com/<...gist...>.git' 'C:/Users/<...you...>/Deskt
 This script copies the template and sets up a Python virtual environment.
 
 ```PowerShell
-$templateDir = 'template-first-time'
-
 $tmp = New-TemporaryFile
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tmpdir
-$template = "$tmpdir/$templateDir"
+$templateFirstTime = "$tmpdir/template-first-time"
+$template = "$tmpdir/template"
+Get-ChildItem -File "$templateFirstTime/*" | Move-Item -Force
 Get-ChildItem -File "$template/*" | Move-Item -Force
 if (! (Test-Path '.vscode')) {New-Item -ItemType Directory '.vscode'}
 Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
