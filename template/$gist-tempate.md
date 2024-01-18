@@ -4,11 +4,10 @@ Placeholder description.
 
 ## Usage
 
-Download this Gist, install the `$PYTHON_VERSION` seen in `setup.ps1`, and run `setup.ps1` if you have [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell) installed, or equivalently in a terminal of your choice:
+Download this Gist and run `setup.ps1` if you have [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell) installed, or equivalently in a terminal of your choice:
 
-- If, for example, `$PYTHON_VERSION` is `3.11`, run `py -3.11 -m venv .venv` in Windows or on UNIX-like/MacOS systems [with the Python Launcher](https://python-launcher.app/) installed.
+- Create a virtual environment, e.g. by running `py -m venv .venv` in Windows or on UNIX-like/MacOS systems [with the Python Launcher](https://python-launcher.app/) installed.
 - Activate the virtual environment with `.venv/scripts/activate` on Windows or `.venv/bin/activate` on UNIX-like/MacOS systems.
 - Install requirements with `pip install -r requirements.txt`.
-- Run Python scripts/modules in this Gist like `python <module>.py` or `python -m <module>`.
 
-Refer to additional details in the [template](https://gist.github.com/blakeNaccarato/7ddaf3510a58223fab869f13e1eaecba#template-usage) from which this Gist is derived, including ground-up setup instructions, if needed.
+Now you can run Python scripts/modules in this Gist e.g. like `python example.py`. If you ran `setup.ps1`, you will also have some VSCode tooling and configurations. The [template `README.md`](../README.md) details the additional tooling available, as well as system setup.
