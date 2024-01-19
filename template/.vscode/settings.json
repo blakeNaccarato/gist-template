@@ -130,5 +130,6 @@
   },
   "evenBetterToml.formatter.columnWidth": 88,
   //! Other
-  "": "" // Other settings automatically added below this line
+  //? Other automatically added settings below
+  "": ""
 }
