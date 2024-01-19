@@ -1,29 +1,29 @@
 # gist-template
 
-A Gist template designed for rapid Python development in VSCode. It occupies the middle ground between one-off scripts and full-featured repositories. It includes refactoring tools, optional type checking, linting, and code formatting. You might ask, why use these tools in the first place? See [⬇ using template features](#using-template-features) for more detail, example usage, and some reasons why you might want to use these features in your development workflow.
+A Gist template designed for rapid Python development in VSCode. It occupies the middle ground between one-off scripts and full-featured repositories. It includes refactoring tools, optional type checking, linting, and code formatting. You might ask, why use these tools in the first place? See [using template features ⬇](#using-template-features) for more detail, example usage, and some reasons why you might want to use these features in your development workflow.
 
 If you're new to Python or VSCode, this template represents sensible configuration of a VSCode development environment for Python with dependency management, debugging, code checking, code formatting, refactoring, and type checking. Most tooling is configured in `pyproject.toml`, with Pylance modified to be relatively strict, but use warnings to reduce visual overwhelm, and Ruff made similarly strict, but with certain rules suppressed.
 
 ## Usage
 
-To [⬇ generate a Gist from this template](#generate-a-gist-from-this-template), run [⬇`setup.ps1`](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [⬇ using template features](#using-template-features) for more detail on what this template offers.
+To [generate a Gist from this template ⬇](#generate-a-gist-from-this-template), run [`setup.ps1`⬇](#setupps1) in a local clone of a newly-created Gist, then commit and push the changes. The script is written for [cross-platform PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell), and should work on Windows, UNIX-like, and MacOS systems alike. See [using template features ⬇](#using-template-features) for more detail on what this template offers.
 
-This template currently assumes Python 3.11, but you may fork it, change `target-version = "py311"` in `pyproject.toml` accordingly, and update the `clone` target in [⬇`setup.ps1`](#setupps1).
+This template currently assumes Python 3.11, but you may fork this repo, change `target-version = "py311"` in `pyproject.toml` accordingly, and update the `clone` target in [`setup.ps1`⬇](#setupps1).
 
 ## Generate a Gist from this template
 
 These steps detail the usage of this template starting from scratch on a brand new machine, including the installation of Python and other tools.
 
-- Install Python 3.11, VSCode, cross-platform PowerShell, and Git [(⬇details)](#first-time-setup)
-- Create a GitHub account and set the same username/email in your `~/.gitconfig` [(⬇details)](#create-a-github-account-and-configure-git)
-- Create a [blank Gist](https://gist.github.com/), populate with [⬇`setup.ps1`](#setupps1), and clone/open in VSCode [(⬇details)](#create-clone-and-open-your-gist-in-vscode)
-- Run `setup.ps1` locally [(⬇details)](#run-setupps1)
-- If prompted, respond `Yes` to the prompt to select the virtual environment for the workspace folder. You can fix this later on if you miss your chance here [(⬇details)](#set-your-python-interpreter).
+- Install Python 3.11, VSCode, cross-platform PowerShell, and Git [(details⬇)](#first-time-setup)
+- Create a GitHub account and set the same username/email in your `~/.gitconfig` [(details⬇)](#create-a-github-account-and-configure-git)
+- Create a [blank Gist](https://gist.github.com/), populate with [`setup.ps1`⬇](#setupps1), and clone/open in VSCode [(details⬇)](#create-clone-and-open-your-gist-in-vscode)
+- Run `setup.ps1` locally [(details⬇)](#run-setupps1)
+- If prompted, respond `Yes` to the prompt to select the virtual environment for the workspace folder. You can fix this later on if you miss your chance here [(details⬇)](#set-your-python-interpreter).
 - Restart VSCode and click `Yes` when prompted to install recommended extensions from the bottom-right notification bell menu. Otherwise, navigate to the Extensions tab, search for `@recommended`, and click the cloud icon next to `Workspace Recommendations` to install.
 - Add the year and your name to the `LICENSE`, e.g. `Copyright (c) 2023 Blake Naccarato`. This signals to others the conditions for using your code.
 - Commit and push changes to your Gist. See [this segment](https://www.youtube.com/watch?v=i_23KUAEtUM&t=76s) for doing this in VSCode ([brief outline](https://code.visualstudio.com/docs/introvideos/versioncontrol#_video-outline), [more detail](https://code.visualstudio.com/docs/sourcecontrol/overview)).
 
-Now you should be able to modify and run Python scripts in this Gist. Try adding some Python code to the `main()` function of `example.py`. Run your script from the terminal like e.g. `python example.py`, or by clicking the "play button" icon in the VSCode tab ribbon while `example.py` is open. See [⬇ using template features](#using-template-features) with examples involving the code in `example.py`.
+Now you should be able to modify and run Python scripts in this Gist. Try adding some Python code to the `main()` function of `example.py`. Run your script from the terminal like e.g. `python example.py`, or by clicking the "play button" icon in the VSCode tab ribbon while `example.py` is open. See [using template features ⬇](#using-template-features) with examples involving the code in `example.py`.
 
 ## Customizing further and going beyond the Gist template
 
@@ -48,19 +48,18 @@ Now you can start writing your Python code, updating requirements, and using the
 
 ### Control the displayed Gist name
 
-Rename `$gist-template.md` and modify it to reflect the purpose of your Gist. It is `$`-prefixed and named so it sorts to the top of the Gist, and the Gist inherits its name. After pushing the Gist to the web and checking it online, you'll see how this Markdown file becomes the name of the Gist.
-
+Rename `$gist-template.md` and modify it to reflect the purpose of your Gist. It is `$`-prefixed and named so it sorts to the top of the Gist, and the Gist inherits its name. After pushing the Gist to the web and checking it online, you'll see how this Markdown file becomes the name of the Gist.  
 [⬆ back](#using-template-features)
 
 ### Communicate your dependencies
 
-Include dependencies for running script(s) in `requirements.txt` (e.g. `pandas == 2.1.4` if using Pandas). Consider [pinning your requirements](https://pip.pypa.io/en/stable/topics/repeatable-installs/). You can run `pip freeze -r requirements.txt` and copy any package versions directly used by your scripts to `requirements.txt`. This signals the exact versions of dependencies these scripts last worked on. Consider also specifying the Python version you're using (Python 3.11, 3.12, etc.) in the Markdown document of your Gist. Remember to re-run `setup.ps1` (or `pip install -r requirements.txt`) whenever you modify `requirements.txt`!
-
+Include dependencies for running script(s) in `requirements.txt` (e.g. `pandas == 2.1.4` if using Pandas). Consider [pinning your requirements](https://pip.pypa.io/en/stable/topics/repeatable-installs/). You can run `pip freeze -r requirements.txt` and copy any package versions directly used by your scripts to `requirements.txt`. This signals the exact versions of dependencies these scripts last worked on. Remember to re-run `setup.ps1` (or `pip install -r requirements.txt`) whenever you modify `requirements.txt`!  
 [⬆ back](#using-template-features)
 
 ### Debug your code
 
-The configurations in `launch.json` enable you to run your code in debug mode, that is, to freeze in the middle of executing your code and analyze local state. See VSCode's [Python debugging guide](https://code.visualstudio.com/docs/python/debugging) for details, but in short, you can debug your code by clicking somewhere in the "gutter" (to the left of the line number) to place a breakpoint, then press `F5` or click the drop-down arrow next to the "play button" in the tab strip and click `Debug Python file`. The bundled debug configuration redirects output to the `Debug Console` pane, so all commands run there will receive input there, as opposed to the default configuration where output is echoed to the `Terminal` pane.
+The configurations in `launch.json` enable you to run your code in debug mode, that is, to freeze in the middle of executing your code and analyze local state. See VSCode's [Python debugging guide](https://code.visualstudio.com/docs/python/debugging) for details, but in short, you can debug your code by clicking somewhere in the "gutter" (to the left of the line number) to place a breakpoint, then press `F5` or click the drop-down arrow next to the "play button" in the tab strip and click `Debug Python file`. The bundled debug configuration redirects output to the `Debug Console` pane, so all commands run there will receive input there, as opposed to the default configuration where output is echoed to the `Terminal` pane.  
+[⬆ back](#using-template-features)
 
 ### Learn gradually from immediate feedback
 
@@ -122,8 +121,7 @@ You can interact with Pylance underlines much in the same way as you do with Ruf
 
 ### Check and format Markdown documentation
 
-This template configures the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and [Markdown All-in-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extensions to help you in writing [Markdown](https://www.markdownguide.org/) documentation. It's a simple text format that automatically renders to HTML in Gists and elsewhere. Click the preview icon in the tab bar when modifying a Markdown document to get a live preview, formatted to look like GitHub Markdown by [this extension](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles).
-
+This template configures the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and [Markdown All-in-One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extensions to help you in writing [Markdown](https://www.markdownguide.org/) documentation. It's a simple text format that automatically renders to HTML in Gists and elsewhere. Click the preview icon in the tab bar when modifying a Markdown document to get a live preview, formatted to look like GitHub Markdown by [this extension](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles).  
 [⬆ back](#using-template-features)
 
 ## In-depth setup guide
@@ -144,8 +142,7 @@ Once Windows Terminal (`wt`) is installed, open it from the start menu, click th
 
 #### On other operating systems
 
-If you're on another operating system, review relevant sections of [this setup guide](https://blakenaccarato.github.io/copier-python/#one-time-setup) to install Python, VSCode, Python, cross-platform PowerShell, and Git. Also install the UNIX-like/MacOS-compatible [Python Launcher](https://python-launcher.app/), which unifies the `py` command functionality across operating systems.
-
+If you're on another operating system, review relevant sections of [this setup guide](https://blakenaccarato.github.io/copier-python/#one-time-setup) to install Python, VSCode, Python, cross-platform PowerShell, and Git. Also install the UNIX-like/MacOS-compatible [Python Launcher](https://python-launcher.app/), which unifies the `py` command functionality across operating systems.  
 [⬆ back](#generate-a-gist-from-this-template)
 
 ### Create a GitHub account and configure git
