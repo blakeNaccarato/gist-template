@@ -10,7 +10,7 @@ Download this Gist and run `setup.ps1` in a [cross-platform PowerShell](https://
 
 - Creates a virtual environment by running `py -m venv .venv`
 - Activates the virtual environment with `.venv/scripts/activate` on Windows, or `.venv/bin/activate` on UNIX-like/MacOS systems.
-- Installs requirements with `pip install -r requirements.txt`.
-- Installs some template-specific VSCode tooling
+- Installs requirements with `pip install -r requirements.txt`
+- Installs some VSCode tooling configs
 
 See a more [in-depth guide](https://github.com/blakeNaccarato/gist-template#first-time-setup) for first-time setup instructions on a new machine, or if this is your first time using Python. Now you can run Python scripts in this Gist, in an activated terminal window, for example like `python example.py`. If you plan to modify this code or use it as a starting point for your own development, the [template](https://github.com/blakeNaccarato/gist-template) from which this Gist is derived details the additional VSCode tooling available.
