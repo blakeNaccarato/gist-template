@@ -237,6 +237,7 @@ if (! (Test-Path '.venv')) { py -m 'venv' '.venv' }
 if (Test-Path ($activateWin = '.venv/scripts/activate')) { . $activateWin }
 else { . '.venv/bin/activate' }
 pip install --requirement 'requirements.txt'
+
 ```
 
 [⬆ back](#generate-a-gist-from-this-template)
@@ -301,6 +302,7 @@ EnablePseudoConsoleSupport=Disabled
 EnableFSMonitor=Enabled
 '@ | Out-File ($inf = New-TemporaryFile)
 winget install --id 'Git.Git' --override "/SILENT /LOADINF=$inf"
+
 ```
 
 [⬆ back](#first-time-setup)
