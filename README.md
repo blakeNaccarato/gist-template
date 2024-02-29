@@ -220,7 +220,7 @@ git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tempD
 
 # Move first-time items over if none already exist here  (e.g. readme, example scripts)
 $templateFirstTime = "$tempDirectory/template-first-time"
-$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*"
+$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*" -Exclude 'setup.ps1'
 $existingFirstTimeItems = $firstTimeItems |
     Resolve-Path -RelativeBasePath $templateFirstTime -Relative |
     Get-Item -ErrorAction SilentlyContinue
