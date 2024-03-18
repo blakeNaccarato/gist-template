@@ -1,2 +1,3 @@
 # Dependencies for this Gist, installed with `setup.ps1`
-pytest
+uv==0.1.21
+pytest==8.1.1

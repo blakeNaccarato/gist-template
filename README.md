@@ -211,32 +211,24 @@ Paste this script into new Gists from the web interface, naming it `setup.ps1`. 
 
 ```PowerShell
 <#.SYNOPSIS
-Copy VSCode configs and install requirements in a Python virtual environment.
-#>
-
-# Clone the template into a temporary directory
+Copy VSCode configs and install requirements in a Python virtual environment.#>
+# ? Clone the template into a temporary directory
 $tempDirectory = "$(($tempFile = New-TemporaryFile).Directory)/$($tempFile.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tempDirectory
-
-# Move first-time items over if none already exist here  (e.g. readme, example scripts)
+# ? Move first-time items over if none already exist here  (e.g. readme, example scripts)
 $templateFirstTime = "$tempDirectory/template-first-time"
-$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*" -Exclude 'setup.ps1'
+$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*" -Exclude 'Sync-Py.ps1'
 $existingFirstTimeItems = $firstTimeItems |
     Resolve-Path -RelativeBasePath $templateFirstTime -Relative |
     Get-Item -ErrorAction SilentlyContinue
 if (-not $existingFirstTimeItems) { $firstTimeItems | Move-Item }
-
-# Move all `.gitignore`d template items over, overwriting existing items
+# ? Move all `.gitignore`d template items over, overwriting existing items
 $template = "$tempDirectory/template"
 Get-ChildItem -File "$template/*" | Move-Item -Force
 if (! (Test-Path '.vscode')) { New-Item -ItemType Directory '.vscode' }
 Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
-
-# Create a virtual environment if needed, and install requirements
-if (! (Test-Path '.venv')) { py -m 'venv' '.venv' }
-if (Test-Path ($activateWin = '.venv/scripts/activate')) { . $activateWin }
-else { . '.venv/bin/activate' }
-pip install --requirement 'requirements.txt'
+# ? Synchronize the virtual environment and install requirements
+Sync-Py.ps1
 
 ```
 
