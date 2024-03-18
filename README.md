@@ -211,25 +211,17 @@ Paste this script into new Gists from the web interface, naming it `setup.ps1`. 
 
 ```PowerShell
 <#.SYNOPSIS
-Copy VSCode configs and install requirements in a Python virtual environment.#>
-# ? Clone the template into a temporary directory
-$tempDirectory = "$(($tempFile = New-TemporaryFile).Directory)/$($tempFile.BaseName)"
-git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tempDirectory
-# ? Move first-time items over if none already exist here  (e.g. readme, example scripts)
-$templateFirstTime = "$tempDirectory/template-first-time"
-$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*" -Exclude 'Sync-Py.ps1'
-$existingFirstTimeItems = $firstTimeItems |
-    Resolve-Path -RelativeBasePath $templateFirstTime -Relative |
-    Get-Item -ErrorAction SilentlyContinue
-if (-not $existingFirstTimeItems) { $firstTimeItems | Move-Item }
-# ? Move all `.gitignore`d template items over, overwriting existing items
-$template = "$tempDirectory/template"
-Get-ChildItem -File "$template/*" | Move-Item -Force
-if (! (Test-Path '.vscode')) { New-Item -ItemType Directory '.vscode' }
-Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
-# ? Synchronize the virtual environment and install requirements
+First-time setup.#>
+# Clone the template into a temporary directory
+$tmp = New-TemporaryFile
+$tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
+git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tmpdir
+# Move first-time items over
+$firstTimetemplate = "$tmpdir/template-first-time"
+Get-ChildItem -File "$tmpdir/template-first-time/*" | Move-Item -Force
+# Run the full `setup.ps1` downloaded from the template
 Start-Sleep 1
-Sync-Py.ps1
+./setup.ps1
 
 ```
 
