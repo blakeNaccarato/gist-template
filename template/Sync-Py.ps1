@@ -1,14 +1,12 @@
 <#.SYNOPSIS
 Copy the template and update dependencies in a Python virtual environment.#>
-Param(
-    # Python version.
-    [string]$Version = '3.12'
-)
 
 # ? Fail early
 $ErrorActionPreference = 'Stop'
 $PSNativeCommandUseErrorActionPreference = $true
 $PSNativeCommandUseErrorActionPreference | Out-Null
+# ? Source Python version from `pyversion.txt`
+$Version = (Get-Content "pyversion.txt") ? (Get-Content "pyversion.txt") : '3.11'
 
 function Sync-Py {
     <#.SYNOPSIS
