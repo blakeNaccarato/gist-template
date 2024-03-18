@@ -5,8 +5,11 @@ Copy the template and update dependencies in a Python virtual environment.#>
 $ErrorActionPreference = 'Stop'
 $PSNativeCommandUseErrorActionPreference = $true
 $PSNativeCommandUseErrorActionPreference | Out-Null
-# ? Source Python version from `pyversion.txt`
-$Version = (Get-Content "pyversion.txt") ? (Get-Content "pyversion.txt") : '3.11'
+# ? Source Python version from `runtime.txt`
+$ver_pattern = '^python-(\d+\.\d+).+$'
+$re = Get-Content "runtime.txt" -ErrorAction Ignore | Select-String -Pattern $ver_pattern
+$Version = $re.Matches.Groups[1].value
+$Version = $Version ? $Version : '3.12'
 
 function Sync-Py {
     <#.SYNOPSIS

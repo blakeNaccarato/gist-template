@@ -215,9 +215,9 @@ Copy VSCode configs and install requirements in a Python virtual environment.#>
 # ? Clone the template into a temporary directory
 $tempDirectory = "$(($tempFile = New-TemporaryFile).Directory)/$($tempFile.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tempDirectory
-# ? Move first-time items over if none already exist here (e.g. readme, example scripts)
+# ? Move first-time items over if none already exist here  (e.g. readme, example scripts)
 $templateFirstTime = "$tempDirectory/template-first-time"
-$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*"
+$firstTimeItems = Get-ChildItem -File "$templateFirstTime/*" -Exclude 'Sync-Py.ps1'
 $existingFirstTimeItems = $firstTimeItems |
     Resolve-Path -RelativeBasePath $templateFirstTime -Relative |
     Get-Item -ErrorAction SilentlyContinue
@@ -228,7 +228,8 @@ Get-ChildItem -File "$template/*" | Move-Item -Force
 if (! (Test-Path '.vscode')) { New-Item -ItemType Directory '.vscode' }
 Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
 # ? Synchronize the virtual environment and install requirements
-./Sync-Py.ps1
+Start-Sleep 1
+Sync-Py.ps1
 
 ```
 
