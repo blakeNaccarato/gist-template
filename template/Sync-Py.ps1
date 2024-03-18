@@ -22,6 +22,7 @@ function Sync-Py {
     Get-ChildItem -File "$template/*" | Move-Item -Force
     if (! (Test-Path '.vscode')) {New-Item -ItemType Directory '.vscode'}
     Get-ChildItem -File "$template/.vscode/*" | Move-Item -Destination '.vscode' -Force
+    $py = Get-Py $Version
     'INSTALLING UV' | Write-PyProgress
     Invoke-Expression "$py -m pip install $(Get-Content "requirements.txt" | Select-String -Pattern '^uv')"
     'INSTALLING DEPENDENCIES' | Write-PyProgress
