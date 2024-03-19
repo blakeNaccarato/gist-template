@@ -7,7 +7,8 @@
       "options": { "shell": { "executable": "pwsh" } },
       "command": "setup.ps1",
       "icon": { "id": "file-symlink-directory" },
-      "problemMatcher": []
-    }
+      "problemMatcher": [],
+      "runOptions": { "runOn": "folderOpen" }
+    },
   ]
 }
