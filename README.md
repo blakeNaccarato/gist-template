@@ -217,10 +217,8 @@ $tmp = New-TemporaryFile
 $tmpdir = "$($tmp.Directory)/$($tmp.BaseName)"
 git clone --depth 1 'https://github.com/blakeNaccarato/gist-template.git' $tmpdir
 # Move first-time items over
-$firstTimetemplate = "$tmpdir/template-first-time"
 Get-ChildItem -File "$tmpdir/template-first-time/*" | Move-Item -Force
 # Run the full `setup.ps1` downloaded from the template
-Start-Sleep 1
 ./setup.ps1
 
 ```
