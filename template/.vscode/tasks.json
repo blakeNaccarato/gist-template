@@ -11,7 +11,7 @@
       "runOptions": { "runOn": "folderOpen" }
     },
     {
-      "label": "setup",
+      "label": "compile",
       "type": "shell",
       "options": { "shell": { "executable": "pwsh" } },
       "command": "setup.ps1",
