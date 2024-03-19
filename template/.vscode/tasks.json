@@ -10,5 +10,14 @@
       "problemMatcher": [],
       "runOptions": { "runOn": "folderOpen" }
     },
+    {
+      "label": "setup",
+      "type": "shell",
+      "options": { "shell": { "executable": "pwsh" } },
+      "command": "setup.ps1",
+      "args": ["-Compile"],
+      "icon": { "id": "file-symlink-directory" },
+      "problemMatcher": [],
+    },
   ]
 }
