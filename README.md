@@ -29,7 +29,7 @@ Now you should be able to modify and run Python scripts in this Gist. Try adding
 
 The `.gitignored` `.vscode` folder, `.markdownlint-cli2.yaml`, and `pyproject.toml` configures template tooling. Adjust these files accordingly to customize behaviors. Modify `.gitignore` if you want to track config changes, but be mindful that Gists cannot contain directories (e.g. `.vscode`). This template seeks sensible configurations, and intentionally avoids committing the tooling specifics to the Gist to avoid clutter.
 
-If your Gist becomes more complex, consider migrating to a full-featured GitHub repository. Check out my [copier-python repository template](https://github.com/blakeNaccarato/copier-python), which is a lot like this Gist template, but facilitates organizing your code into a package releasable on PyPI, and has documentation, testing, and even more dev tooling.
+If your Gist becomes more complex, consider migrating to a full-featured GitHub repository. Check out my [copier-pipeline repository template](https://softboiler.org/copier-pipeline/contributing.html#first-time-setup), which is a lot like this Gist template, but facilitates organizing your code into a package releasable on PyPI, and has documentation, testing, and even more dev tooling.
 
 ## Using template features
 
